@@ -1,12 +1,28 @@
 {
   "name": "html-factory",
   "version": "0.0.1",
-  "description": "",
+  "description": "Wrapper Package to factor HTML out of the product of various WYSIWYG editors. Currently supports editorjs only.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "@editorjs/attaches": "^1.2.1",
+    "@editorjs/code": "^2.7.0",
+    "@editorjs/delimiter": "^1.2.0",
+    "@editorjs/editorjs": "^2.24.3",
+    "@editorjs/embed": "^2.5.1",
+    "@editorjs/header": "^2.6.2",
+    "@editorjs/image": "^2.6.2",
+    "@editorjs/link": "^2.4.1",
+    "@editorjs/list": "^1.7.0",
+    "@editorjs/marker": "^1.2.2",
+    "@editorjs/paragraph": "^2.8.0",
+    "@editorjs/quote": "^2.4.0",
+    "@editorjs/table": "^2.0.2",
+    "@editorjs/warning": "^1.2.0"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Emilien Kopp - Abroads",
   "license": "ISC"
 }
