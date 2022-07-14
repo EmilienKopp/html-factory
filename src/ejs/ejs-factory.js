@@ -1,7 +1,9 @@
-import EditorJS, { OutputData } from '@editorjs/editorjs';
-import EJSConfig from "./ejs-config";
-import EJSHtmlBuilder from "./ejs-html-builder";
-import { Factory } from '../types/factory';
+import pkg from '@editorjs/editorjs';
+import EJSConfig from "./ejs-config.js";
+import EJSHtmlBuilder from "./ejs-html-builder.js";
+import { Factory } from '../types/factory.js';
+
+const {EditorJS, OutputData } = pkg;
 
 // Export the default EditorJS configuration object to be easily accessible for the user and to instatiate by default the EditorJS object
 export const DefaultEditorConfig = EJSConfig.DefaultEditorConfig;
@@ -14,6 +16,13 @@ export class EJSFactory extends Factory {
      * @memberof EJSFactory
      */
     EJSConfig;
+
+    /**
+     * Config shortcut to the EJSConfig object
+     * @returns {EJSConfig}
+     * @memberof EJSFactory
+     */
+    config = this.factory.config;
 
     /**
      * EditorJS object 
@@ -43,7 +52,7 @@ export class EJSFactory extends Factory {
      * @type {Promise<void>}
      * @memberof EJSFactory
      */
-    isReady = () => { return this.baseEditor.isReady; }
+    isReady = this.baseEditor.isReady;
 
     /**
      * Blocks are objects that represent the blocks of the editor.
@@ -51,7 +60,7 @@ export class EJSFactory extends Factory {
      * @type {Promise<void>}
      * @memberof EJSFactory
      */
-    blocks = () => { return this.baseEditor.blocks; }
+    blocks = this.baseEditor.blocks;
     
     /**
      * Store the JSON string representing the blocks of the editor
@@ -116,8 +125,17 @@ export class EJSFactory extends Factory {
      * @returns {object} A block object reprenting the blocks of the editor
      * @memberof EJSFactory
      */
-    getBlocks() {
+    get blocks() {
         return this.blocks;
+    }
+
+    /**
+     * Setter for blocks property.
+     * @param {object} blocks A block object reprenting the blocks of the editor
+     * @memberof EJSFactory
+     */
+    set blocks(blocks) {
+        this.blocks = blocks;
     }
 
     /**
@@ -132,7 +150,7 @@ export class EJSFactory extends Factory {
 
     /**
      * Call the save() method of the editor and return a Promise containing an OutputData object.
-     * @returns Promise<OutputData>
+     * @returns {Promise<OutputData>} Promise containing an OutputData object
      * @memberof EJSFactory
      */
     saveEditorData() {
@@ -140,9 +158,10 @@ export class EJSFactory extends Factory {
     }
 
     /**
-     * Take the JSON representation of the editor and render the Editor with it.
-     * @param {string} data JSON formatted string 
-     * @returns method from the EditorJS class
+     * Take the OutputObject and render the Editor with it.
+     * Is rendered in the HTML Element defined by the holder property.
+     * @param {object} data OutputData object
+     * @returns {Promise<void>} Promise to resolve when rendering is done
      * @memberof EJSFactory
      */
     renderEditor(data) {

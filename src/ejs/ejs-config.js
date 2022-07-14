@@ -1,5 +1,5 @@
 
-export class EJSConfig {
+export default class EJSConfig {
 
     /** API Endpoint for fetching Link Metadata **/
     LinkToolEndpoint = 'https://your-api-here/';

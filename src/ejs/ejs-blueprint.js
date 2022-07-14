@@ -3,7 +3,7 @@
  * Blueprint to parse the JSON object savec by editorjs into HTML
  *   
  */
-export class EJSBlueprint {
+export default class EJSBlueprint {
     time;
     blocks = {
         type,

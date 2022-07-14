@@ -1,5 +1,11 @@
+/**
+* Abstract factory class.
+*/
 
 export class Factory {
+
+
+
     constructor() {
         if (this.constructor === Factory) {
             throw new TypeError('Abstract class "Factory" cannot be instantiated directly.');
@@ -12,6 +18,10 @@ export class Factory {
 
     renderEditor(data) {
         throw new TypeError('Abstract method "renderEditor" must be implemented.');
+    }
+
+    saveEditorData() {
+        throw new TypeError('Abstract method "saveEditorData" must be implemented.');
     }
 
 }

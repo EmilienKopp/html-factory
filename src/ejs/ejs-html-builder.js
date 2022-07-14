@@ -1,7 +1,7 @@
-import EJSBlueprint from "./ejs-blueprint";
-import * as Streamline from "../utils/streamline";
+import EJSBlueprint from "./ejs-blueprint.js";
+import * as Streamline from "../utils/streamline.js";
 
-class EJSHtmlBuilder {
+export default class EJSHtmlBuilder {
 
     // Properties
     rawData; // JSON Data

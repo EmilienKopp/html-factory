@@ -1,10 +1,13 @@
 {
-  "name": "html-factory",
-  "version": "0.0.1",
+  "name": "@emilienkopp/html-factory",
+  "version": "1.0.0",
+  "type": "module",
+  "module": "./index.js",
   "description": "Wrapper Package to factor HTML out of the product of various WYSIWYG editors. Currently supports editorjs only.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "dependencies": {
     "@editorjs/attaches": "^1.2.1",
@@ -20,9 +23,19 @@
     "@editorjs/paragraph": "^2.8.0",
     "@editorjs/quote": "^2.4.0",
     "@editorjs/table": "^2.0.2",
-    "@editorjs/warning": "^1.2.0"
+    "@editorjs/warning": "^1.2.0",
+    "express": "^4.18.1"
   },
   "keywords": [],
   "author": "Emilien Kopp - Abroads",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilienKopp/html-factory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EmilienKopp/html-factory/issues"
+  },
+  "homepage": "https://github.com/EmilienKopp/html-factory#readme"
 }
