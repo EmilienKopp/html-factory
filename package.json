@@ -1,6 +1,6 @@
 {
   "name": "@emilienkopp/html-factory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "module": "./index.js",
   "description": "Wrapper Package to factor HTML out of the product of various WYSIWYG editors. Currently supports editorjs only.",
